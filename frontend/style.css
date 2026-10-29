@@ -1,0 +1,471 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #0b0d12;
+    --panel: #11141c;
+    --card: #171b25;
+    --border: #262b38;
+    --text: #edf0f8;
+    --muted: #8b93a7;
+    --accent: #9b8cff;
+    --accent-2: #6fe2cf;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+button, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 270px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 18px 20px;
+    background: #0e1017;
+    border-right: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 38px 4px;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 14px;
+    color: #11131b;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #c4b8ff, #80e7d6);
+    box-shadow: 0 0 25px #9b8cff22;
+}
+
+.brand h2 {
+    margin: 0 0 4px;
+    font: 600 17px 'Space Grotesk', sans-serif;
+}
+
+.brand p, .feature p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.new-chat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 13px;
+    color: var(--text);
+    background: #191c27;
+    border: 1px solid #303446;
+    border-radius: 12px;
+    text-align: left;
+    transition: .2s;
+}
+
+.new-chat:hover, .suggestion:hover {
+    border-color: var(--accent);
+    background: #201f32;
+    transform: translateY(-2px);
+}
+
+.new-chat span {
+    font-size: 22px;
+    color: var(--accent);
+}
+
+.sidebar-label {
+    margin: 36px 8px 16px;
+    color: #777f93;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 10px;
+    border-radius: 12px;
+    background: #171925;
+}
+
+.feature > span {
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    color: var(--accent);
+    background: #9b8cff18;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.feature strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: auto;
+    padding: 15px 7px 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #69dcb4;
+    box-shadow: 0 0 10px #69dcb455;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 5%;
+    border-bottom: 1px solid var(--border);
+    background: #0d0f15;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.topbar .eyebrow {
+    margin: 0 0 5px;
+}
+
+.topbar h3 {
+    margin: 0;
+    font: 500 18px 'Space Grotesk', sans-serif;
+}
+
+.model-badge {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 13px;
+    color: #c4c9d7;
+    background: #171a23;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+.chat-area {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 45px 6% 25px;
+}
+
+.welcome {
+    margin: auto 0;
+    padding: 35px 0;
+    animation: appear .5s ease;
+}
+
+.welcome-icon {
+    display: grid;
+    place-items: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 27px;
+    color: #d8d0ff;
+    background: linear-gradient(135deg, #27213e, #182f35);
+    border: 1px solid #45405f;
+    border-radius: 18px;
+    font-size: 29px;
+    box-shadow: 0 0 40px #9b8cff12;
+}
+
+.welcome .eyebrow {
+    margin-bottom: 14px;
+}
+
+.welcome h1 {
+    margin: 0;
+    font: 600 clamp(34px, 4vw, 49px)/1.2 'Space Grotesk', sans-serif;
+    letter-spacing: -1.7px;
+}
+
+.welcome h1 span {
+    color: var(--accent);
+}
+
+.welcome-text {
+    max-width: 470px;
+    margin: 19px 0 30px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.suggestions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.suggestion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    min-height: 125px;
+    padding: 16px;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: left;
+    transition: .2s;
+}
+
+.suggestion > span {
+    color: var(--accent-2);
+    font-size: 20px;
+}
+
+.suggestion strong {
+    font-size: 12px;
+}
+
+.suggestion small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.composer-wrap {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 10px 20px 24px;
+}
+
+.composer {
+    padding: 15px 16px 12px;
+    background: #151821;
+    border: 1px solid #333849;
+    border-radius: 17px;
+    box-shadow: 0 10px 45px #00000025;
+    transition: border-color .2s;
+}
+
+.composer:focus-within {
+    border-color: #8e7cf0;
+    box-shadow: 0 0 0 3px #9b8cff12;
+}
+
+.composer textarea {
+    display: block;
+    width: 100%;
+    min-height: 32px;
+    max-height: 150px;
+    resize: vertical;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.composer textarea::placeholder {
+    color: #777f93;
+}
+
+.composer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.composer-bottom > span {
+    color: #7d8498;
+    font-size: 10px;
+}
+
+#send-button {
+    display: grid;
+    place-items: center;
+    width: 37px;
+    height: 37px;
+    color: #11131b;
+    background: linear-gradient(135deg, #c2b4ff, #78e4d1);
+    border: none;
+    border-radius: 11px;
+    font-size: 24px;
+    transition: .2s;
+}
+
+#send-button:hover {
+    transform: scale(1.06);
+}
+
+#send-button:disabled {
+    opacity: .5;
+    cursor: wait;
+}
+
+.disclaimer {
+    margin: 12px 0 0;
+    color: #656c7e;
+    font-size: 10px;
+    text-align: center;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message {
+    max-width: 85%;
+    padding: 15px 17px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    animation: appear .25s ease;
+}
+
+.message.user {
+    align-self: flex-end;
+    color: #f4f2ff;
+    background: #292440;
+    border-color: #484064;
+    border-bottom-right-radius: 4px;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background: #151821;
+    border-bottom-left-radius: 4px;
+}
+
+.message.error {
+    color: #ffb8b8;
+    border-color: #693838;
+}
+
+.typing {
+    color: var(--muted);
+    font-size: 13px;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    50% { opacity: .45; }
+}
+
+@media (max-width: 850px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .suggestions {
+        grid-template-columns: 1fr;
+    }
+
+    .suggestion {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+
+    .topbar {
+        padding: 18px 20px;
+    }
+
+    .chat-area {
+        padding: 25px 20px;
+    }
+
+    .welcome {
+        padding: 20px 0;
+    }
+
+    .welcome h1 {
+        font-size: 35px;
+    }
+
+    .composer-wrap {
+        padding: 10px 12px 18px;
+    }
+
+    .model-badge {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+    .message {
+        max-width: 95%;
+    }
+}

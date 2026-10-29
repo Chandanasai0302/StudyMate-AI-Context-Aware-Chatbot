@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate AI | Your Learning Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <div>
+                    <h2>StudyMate AI</h2>
+                    <p>Your learning companion</p>
+                </div>
+            </div>
+
+            <button id="new-chat" class="new-chat">
+                <span>＋</span> New conversation
+            </button>
+
+            <div class="sidebar-label">YOUR SPACE</div>
+            <div class="feature">
+                <span>✦</span>
+                <div>
+                    <strong>AI Study Partner</strong>
+                    <p>Learn at your own pace</p>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="status-dot"></div>
+                <span>Ready to learn</span>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL AI</p>
+                    <h3>Learning space</h3>
+                </div>
+                <div class="model-badge">
+                    <span class="status-dot"></span> Gemini AI
+                </div>
+            </header>
+
+            <section class="chat-area" id="chat-area">
+                <div class="welcome" id="welcome">
+                    <div class="welcome-icon">✦</div>
+                    <p class="eyebrow">WELCOME TO STUDYMATE</p>
+                    <h1>What would you like<br>to <span>learn today?</span></h1>
+                    <p class="welcome-text">
+                        Ask questions, explore ideas, or break down
+                        difficult topics into simple steps.
+                    </p>
+
+                    <div class="suggestions">
+                        <button class="suggestion" data-message="Explain Python loops in simple words.">
+                            <span>⌘</span>
+                            <strong>Learn a concept</strong>
+                            <small>Explain it simply</small>
+                        </button>
+                        <button class="suggestion" data-message="Create a study plan for my upcoming exams.">
+                            <span>▦</span>
+                            <strong>Plan my studies</strong>
+                            <small>Build a study routine</small>
+                        </button>
+                        <button class="suggestion" data-message="Give me a beginner-friendly DSA practice question with a solution.">
+                            <span>⌘</span>
+                            <strong>Practice coding</strong>
+                            <small>Improve step by step</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="messages" class="messages" aria-live="polite"></div>
+            </section>
+
+            <div class="composer-wrap">
+                <form id="chat-form" class="composer">
+                    <textarea
+                        id="message-input"
+                        placeholder="Ask StudyMate anything..."
+                        rows="1"
+                        aria-label="Your message"
+                        required
+                    ></textarea>
+                    <div class="composer-bottom">
+                        <span>✦ Take your learning one step at a time</span>
+                        <button id="send-button" type="submit" aria-label="Send message">
+                            <span>↑</span>
+                        </button>
+                    </div>
+                </form>
+                <p class="disclaimer">StudyMate AI can make mistakes. Verify important information.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
